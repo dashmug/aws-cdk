@@ -62,20 +62,16 @@ def make_eventbridge_configuration():
     return { EVENTBRIDGE_CONFIGURATION: {} }
 
 def make_empty_notification_configuration():
-    config = {}
-    for t in CONFIGURATION_TYPES:
-        config[t] = []
-    return config
+    return {t: [] for t in CONFIGURATION_TYPES}
 
 def make_empty_notification_configuration_with_eventbridge():
     return {**make_empty_notification_configuration(), **make_eventbridge_configuration()}
 
 
 def merge_notification_configurations(conf1: Dict, conf2: Dict):
-    notifications = {}
-    for t in CONFIGURATION_TYPES:
-        notifications[t] = conf1.get(t, []) + conf2.get(t, [])
-
+    notifications = {
+        t: conf1.get(t, []) + conf2.get(t, []) for t in CONFIGURATION_TYPES
+    }
     if EVENTBRIDGE_CONFIGURATION in conf1:
         notifications[EVENTBRIDGE_CONFIGURATION] = conf1[EVENTBRIDGE_CONFIGURATION]
 

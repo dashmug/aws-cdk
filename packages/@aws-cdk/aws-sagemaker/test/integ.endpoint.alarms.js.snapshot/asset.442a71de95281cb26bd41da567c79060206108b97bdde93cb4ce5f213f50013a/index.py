@@ -20,7 +20,7 @@ class SimpleSageMakerServer(http.server.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         if self.path == '/invocations':
-            self.respond(200, 'Artifact info: {}'.format(ARTIFACT))
+            self.respond(200, f'Artifact info: {ARTIFACT}')
         else:
             self.respond(404, 'Not Found')
 
@@ -28,7 +28,7 @@ class SimpleSageMakerServer(http.server.SimpleHTTPRequestHandler):
         self.send_response(status)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
-        self.wfile.write(bytes('{}\n'.format(response), 'utf-8'))
+        self.wfile.write(bytes(f'{response}\n', 'utf-8'))
 
 
 PORT = int(os.environ['SAGEMAKER_BIND_TO_PORT'])
@@ -36,13 +36,13 @@ ARTIFACT_PATH = '/opt/ml/model/artifact.txt'
 
 print('Looking for model artifacts')
 if (os.path.isfile(ARTIFACT_PATH)):
-    print('Loading model artifact from {}'.format(ARTIFACT_PATH))
+    print(f'Loading model artifact from {ARTIFACT_PATH}')
     with open(ARTIFACT_PATH, 'r') as artifact_file:
         ARTIFACT = artifact_file.read().splitlines()
 else:
-    print('No model artifact present at {}'.format(ARTIFACT_PATH))
+    print(f'No model artifact present at {ARTIFACT_PATH}')
     ARTIFACT = 'No artifacts are present'
 
 with socketserver.TCPServer(('', PORT), SimpleSageMakerServer) as httpd:
-    print('Serving requests at port {}'.format(PORT))
+    print(f'Serving requests at port {PORT}')
     httpd.serve_forever()
