@@ -34,9 +34,7 @@ def handler(event: dict, context):
     submit_response(event, context, response_status, error_message)
 
 def handle_managed(request_type, notification_configuration):
-  if request_type == 'Delete':
-    return {}
-  return notification_configuration
+  return {} if request_type == 'Delete' else notification_configuration
 
 def handle_unmanaged(bucket, stack_id, request_type, notification_configuration):
   # find external notifications
@@ -67,12 +65,13 @@ def handle_unmanaged(bucket, stack_id, request_type, notification_configuration)
 
 def find_external_notifications(bucket, stack_id):
   existing_notifications = get_bucket_notification_configuration(bucket)
-  external_notifications = {}
-  for t in CONFIGURATION_TYPES:
-    # if the notification was created by us, we know what id to expect
-    # so we can filter by it.
-    external_notifications[t] = [n for n in existing_notifications.get(t, []) if not n['Id'].startswith(f"{stack_id}-")]
-
+  external_notifications = {
+      t: [
+          n for n in existing_notifications.get(t, [])
+          if not n['Id'].startswith(f"{stack_id}-")
+      ]
+      for t in CONFIGURATION_TYPES
+  }
   # always treat EventBridge configuration as an external config if it already exists
   # as there is no way to determine whether it's managed by us or not
   if EVENTBRIDGE_CONFIGURATION in existing_notifications:
@@ -103,6 +102,6 @@ def submit_response(event: dict, context, response_status: str, error_message: s
     req = urllib.request.Request(url=event["ResponseURL"], headers=headers, data=response_body, method="PUT")
     with urllib.request.urlopen(req) as response:
       print(response.read().decode("utf-8"))
-    print("Status code: " + response.reason)
+    print(f"Status code: {response.reason}")
   except Exception as e:
-      print("send(..) failed executing request.urlopen(..): " + str(e))
+    print(f"send(..) failed executing request.urlopen(..): {str(e)}")

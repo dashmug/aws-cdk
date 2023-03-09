@@ -59,21 +59,21 @@ def helm_handler(event, context):
 
     # Write out the values to a file and include them with the install and upgrade
     values_file = None
-    if not request_type == "Delete" and not values_text is None:
+    if request_type != "Delete" and values_text is not None:
         values = json.loads(values_text)
         values_file = os.path.join(outdir, 'values.yaml')
         with open(values_file, "w") as f:
             f.write(json.dumps(values, indent=2))
 
-    if request_type == 'Create' or request_type == 'Update':
+    if request_type in ['Create', 'Update']:
         # Ensure chart or chart_asset_url are set
-        if chart == None and chart_asset_url == None:
-            raise RuntimeError(f'chart or chartAsset must be specified')
+        if chart is None and chart_asset_url is None:
+            raise RuntimeError('chart or chartAsset must be specified')
 
         if chart_asset_url != None:
-            assert(chart==None)
-            assert(repository==None)
-            assert(version==None)
+            assert chart is None
+            assert repository is None
+            assert version is None
             if not chart_asset_url.startswith('s3://'):
               raise RuntimeError(f'ChartAssetURL must point to as s3 location but is {chart_asset_url}')
             # future work: support versions from s3 assets
@@ -89,7 +89,7 @@ def helm_handler(event, context):
         try:
             helm('uninstall', release, namespace=namespace, timeout=timeout)
         except Exception as e:
-            logger.info("delete error: %s" % e)
+            logger.info(f"delete error: {e}")
 
 
 def get_oci_cmd(repository, version):
@@ -102,23 +102,21 @@ def get_oci_cmd(repository, version):
 
     if private_registry['registry'] is not None:
         logger.info("Found AWS private repository")
-        cmnd = [
-            f"aws ecr get-login-password --region {private_registry['region']} | " \
+        return [
+            f"aws ecr get-login-password --region {private_registry['region']} | "
             f"helm registry login --username AWS --password-stdin {private_registry['registry']}; helm pull {repository} --version {version} --untar"
-            ]
+        ]
     elif public_registry['registry'] is not None:
         logger.info("Found AWS public repository, will use default region as deployment")
         region = os.environ.get('AWS_REGION', 'us-east-1')
 
-        cmnd = [
-            f"aws ecr-public get-login-password --region us-east-1 | " \
+        return [
+            f"aws ecr-public get-login-password --region us-east-1 | "
             f"helm registry login --username AWS --password-stdin {public_registry['registry']}; helm pull {repository} --version {version} --untar"
-            ]
+        ]
     else:
         logger.error("OCI repository format not recognized, falling back to helm pull")
-        cmnd = ['helm', 'pull', repository, '--version', version, '--untar']
-
-    return cmnd
+        return ['helm', 'pull', repository, '--version', version, '--untar']
 
 
 def get_chart_from_oci(tmpdir, repository = None, version = None):
@@ -138,11 +136,10 @@ def get_chart_from_oci(tmpdir, repository = None, version = None):
             return os.path.join(tmpdir, repository.rpartition('/')[-1])
         except subprocess.CalledProcessError as exc:
             output = exc.output
-            if b'Broken pipe' in output:
-                retry = retry - 1
-                logger.info("Broken pipe, retries left: %s" % retry)
-            else:
+            if b'Broken pipe' not in output:
                 raise Exception(output)
+            retry -= 1
+            logger.info(f"Broken pipe, retries left: {retry}")
     raise Exception(f'Operation failed after {maxAttempts} attempts: {output}')
 
 
@@ -150,23 +147,23 @@ def helm(verb, release, chart = None, repo = None, file = None, namespace = None
     import subprocess
 
     cmnd = ['helm', verb, release]
-    if not chart is None:
+    if chart is not None:
         cmnd.append(chart)
     if verb == 'upgrade':
         cmnd.append('--install')
     if create_namespace:
         cmnd.append('--create-namespace')
-    if not repo is None:
+    if repo is not None:
         cmnd.extend(['--repo', repo])
-    if not file is None:
+    if file is not None:
         cmnd.extend(['--values', file])
-    if not version is None:
+    if version is not None:
         cmnd.extend(['--version', version])
-    if not namespace is None:
+    if namespace is not None:
         cmnd.extend(['--namespace', namespace])
     if wait:
         cmnd.append('--wait')
-    if not timeout is None:
+    if timeout is not None:
         cmnd.extend(['--timeout', timeout])
     cmnd.extend(['--kubeconfig', kubeconfig])
 
@@ -179,9 +176,8 @@ def helm(verb, release, chart = None, repo = None, file = None, namespace = None
             return
         except subprocess.CalledProcessError as exc:
             output = exc.output
-            if b'Broken pipe' in output:
-                retry = retry - 1
-                logger.info("Broken pipe, retries left: %s" % retry)
-            else:
+            if b'Broken pipe' not in output:
                 raise Exception(output)
+            retry -= 1
+            logger.info(f"Broken pipe, retries left: {retry}")
     raise Exception(f'Operation failed after {maxAttempts} attempts: {output}')

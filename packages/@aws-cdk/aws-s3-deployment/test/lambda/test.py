@@ -722,10 +722,14 @@ def invoke_handler(requestType, resourceProps, old_resource_props=None, physical
     actual_method = actual_request.method
 
     if actual_url != response_url:
-        raise Exception("Invalid url used for sending CFN response. expected=%s actual=%s" % (response_url, actual_url))
+        raise Exception(
+            f"Invalid url used for sending CFN response. expected={response_url} actual={actual_url}"
+        )
 
     if actual_method != 'PUT':
-        raise Exception("Invalid method used for sending CFN response. expected=PUT actual=%s" % (actual_method,))
+        raise Exception(
+            f"Invalid method used for sending CFN response. expected=PUT actual={actual_method}"
+        )
 
     resp = json.loads(actual_data)
 
@@ -734,7 +738,7 @@ def invoke_handler(requestType, resourceProps, old_resource_props=None, physical
 
         if not expect:
             if not resp.get(name):
-                raise Exception("Missing '%s' field from response: %s" % (name, resp))
+                raise Exception(f"Missing '{name}' field from response: {resp}")
         elif expect and value != expect:
             raise Exception("Expecting response field '%s' to be '%s' but got '%s'.\n%s" % (name, expect, value, json.dumps(resp, indent=2)))
 
