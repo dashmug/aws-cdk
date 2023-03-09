@@ -1,4 +1,4 @@
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import type { CloudFormation } from 'aws-sdk';
 import * as chalk from 'chalk';
 import * as fs from 'fs-extra';

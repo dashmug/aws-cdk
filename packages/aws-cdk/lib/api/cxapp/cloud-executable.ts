@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
-import * as cxapi from '@aws-cdk/cx-api';
-import { RegionInfo } from '@aws-cdk/region-info';
+import * as cxapi from 'aws-cdk-lib/cx-api';
+import { RegionInfo } from 'aws-cdk-lib/region-info';
 import * as semver from 'semver';
 import { CloudAssembly } from './cloud-assembly';
 import * as contextproviders from '../../context-providers';

@@ -1,4 +1,4 @@
-import { SSMPARAM_NO_INVALIDATE } from '@aws-cdk/cx-api';
+import { SSMPARAM_NO_INVALIDATE } from 'aws-cdk-lib/cx-api';
 import { MockedObject, MockSdkProvider, SyncHandlerSubsetOf } from './mock-sdk';
 import { CloudFormationStack, TemplateParameters } from '../../lib/api/util/cloudformation';
 

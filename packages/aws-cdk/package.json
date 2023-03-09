@@ -61,7 +61,7 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@aws-cdk/core": "0.0.0",
+    "aws-cdk-lib": "0.0.0",
     "@octokit/rest": "^18.12.0",
     "@types/archiver": "^5.3.1",
     "@types/fs-extra": "^9.0.13",
@@ -94,10 +94,9 @@
     "fast-check": "^2.25.0"
   },
   "dependencies": {
-    "@aws-cdk/cloud-assembly-schema": "0.0.0",
+    "aws-cdk-lib": "0.0.0",
     "@aws-cdk/cloudformation-diff": "0.0.0",
     "@aws-cdk/cx-api": "0.0.0",
-    "@aws-cdk/region-info": "0.0.0",
     "@jsii/check-node": "1.76.0",
     "archiver": "^5.3.1",
     "aws-sdk": "^2.1325.0",

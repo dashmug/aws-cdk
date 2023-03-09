@@ -1,4 +1,4 @@
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
 import * as aws from 'aws-sdk';
 import * as AWS from 'aws-sdk-mock';
 import { LoadBalancerListenerContextProviderPlugin, LoadBalancerContextProviderPlugin, tagsMatch, describeListenersByLoadBalancerArn, describeTags, describeLoadBalancers } from '../../lib/context-providers/load-balancers';

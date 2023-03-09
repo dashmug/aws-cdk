@@ -1,6 +1,6 @@
 jest.mock('child_process');
 
-import { Manifest } from '@aws-cdk/cloud-assembly-schema';
+import { Manifest } from 'aws-cdk-lib/cloud-assembly-schema';
 import * as mockfs from 'mock-fs';
 import { FakeListener } from './fake-listener';
 import { mockAws, mockedApiFailure, mockedApiResult, mockUpload } from './mock-aws';

@@ -1,6 +1,6 @@
 import { createReadStream, promises as fs } from 'fs';
 import * as path from 'path';
-import { FileAssetPackaging, FileSource } from '@aws-cdk/cloud-assembly-schema';
+import { FileAssetPackaging, FileSource } from 'aws-cdk-lib/cloud-assembly-schema';
 import * as mime from 'mime';
 import { FileManifestEntry } from '../../asset-manifest';
 import { EventType } from '../../progress';

@@ -1,4 +1,4 @@
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import { buildAllStackAssets } from '../lib/build';
 
 type Stack = cxapi.CloudFormationStackArtifact;

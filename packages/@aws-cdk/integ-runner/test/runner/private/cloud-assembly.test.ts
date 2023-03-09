@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { Manifest } from '@aws-cdk/cloud-assembly-schema';
+import { Manifest } from 'aws-cdk-lib/cloud-assembly-schema';
 import * as mockfs from 'mock-fs';
 import { AssemblyManifestReader } from '../../../lib/runner/private/cloud-assembly';
 

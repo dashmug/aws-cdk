@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { IntegManifest, Manifest, TestCase } from '@aws-cdk/cloud-assembly-schema';
+import { IntegManifest, Manifest, TestCase } from 'aws-cdk-lib/cloud-assembly-schema';
 import * as fs from 'fs-extra';
 
 /**

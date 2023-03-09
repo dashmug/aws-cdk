@@ -1,4 +1,4 @@
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
 import { AssetManifestArtifact } from './artifacts/asset-manifest-artifact';
 import { CloudFormationStackArtifact } from './artifacts/cloudformation-artifact';
 import { NestedCloudAssemblyArtifact } from './artifacts/nested-cloud-assembly-artifact';

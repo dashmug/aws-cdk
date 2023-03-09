@@ -2,8 +2,8 @@
  * This test cannot use service modules since it would introduce a circular dependency
  * Using CfnResource etc. is a workaround to still test something useful
  */
-import * as cdk from "@aws-cdk/core";
-import { ExpectedResult, IntegTest } from "@aws-cdk/integ-tests";
+import * as cdk from "aws-cdk-lib";
+import { ExpectedResult, IntegTest } from "aws-cdk-lib/integ-tests";
 
 const app = new cdk.App();
 

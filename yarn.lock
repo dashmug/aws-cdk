@@ -50,6 +50,11 @@
   resolved "https://registry.npmjs.org/@aws-cdk/asset-node-proxy-agent-v5/-/asset-node-proxy-agent-v5-2.0.71.tgz#dd269f8aa160473e006633d2f0f5384f46747693"
   integrity sha512-vB/KF9naAYkELP6Hi5+Oib59B4ZAz6jjtrpsKNzsIZTmcTs0IIBb4nVdAuwMpMkPcwT0mzhMg2tlsiSyjrOFBA==
 
+"@aws-cdk/lambda-layer-kubectl-v24@^2.0.100":
+  version "2.0.127"
+  resolved "https://registry.npmjs.org/@aws-cdk/lambda-layer-kubectl-v24/-/lambda-layer-kubectl-v24-2.0.127.tgz#cd4d97dab817a3a312ca08c3fdc4918198264e72"
+  integrity sha512-XecYoo10NQ3MIfr9+jezvTQFmXbU80WI/0U+1YqSlDYh007l9fjn+ZDZMv3rxGfRb6jjRAiwkhLmzwHCXT5RPw==
+
 "@aws-cdk/lambda-layer-kubectl-v24@^2.0.113":
   version "2.0.113"
   resolved "https://registry.npmjs.org/@aws-cdk/lambda-layer-kubectl-v24/-/lambda-layer-kubectl-v24-2.0.113.tgz#7b22497eb41bd88cfdea73a34c398721514b72c6"
@@ -2886,6 +2891,22 @@ aws-sdk-mock@5.6.0:
     aws-sdk "^2.928.0"
     sinon "^11.1.1"
     traverse "^0.6.6"
+
+aws-sdk@^2.1317.0:
+  version "2.1331.0"
+  resolved "https://registry.npmjs.org/aws-sdk/-/aws-sdk-2.1331.0.tgz#77c6637272bbad2b87b9538b866d6ad114008f20"
+  integrity sha512-zrA1ymbt/D4GtieF7FuiZacv1fp9BBp9qnHUmy0YbPd9dwH5iwPIFkzdGTABbQ+F3a6b//AjtTpcF/JGVjCtTw==
+  dependencies:
+    buffer "4.9.2"
+    events "1.1.1"
+    ieee754 "1.1.13"
+    jmespath "0.16.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    util "^0.12.4"
+    uuid "8.0.0"
+    xml2js "0.4.19"
 
 aws-sdk@^2.1325.0, aws-sdk@^2.928.0:
   version "2.1325.0"

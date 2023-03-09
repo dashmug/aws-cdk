@@ -53,8 +53,8 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@aws-cdk/cdk-build-tools": "0.0.0",
-    "@aws-cdk/core": "0.0.0",
-    "@aws-cdk/integ-tests": "0.0.0",
+    "aws-cdk-lib": "0.0.0",
+    "@aws-cdk/integ-tests-alpha": "0.0.0",
     "@aws-cdk/pkglint": "0.0.0",
     "@types/fs-extra": "^9.0.13",
     "@types/jest": "^27.5.2",
@@ -67,7 +67,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
-    "@aws-cdk/cloud-assembly-schema": "0.0.0",
+    "aws-cdk-lib": "0.0.0",
     "@aws-cdk/cloudformation-diff": "0.0.0",
     "@aws-cdk/cx-api": "0.0.0",
     "cdk-assets": "0.0.0",

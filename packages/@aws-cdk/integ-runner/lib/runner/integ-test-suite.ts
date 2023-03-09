@@ -1,5 +1,5 @@
 import * as osPath from 'path';
-import { TestCase, TestOptions, Manifest, IntegManifest } from '@aws-cdk/cloud-assembly-schema';
+import { TestCase, TestOptions, Manifest, IntegManifest } from 'aws-cdk-lib/cloud-assembly-schema';
 import { ICdk, ListOptions } from 'cdk-cli-wrapper';
 import * as fs from 'fs-extra';
 import { IntegManifestReader } from './private/integ-manifest';

@@ -1,6 +1,6 @@
 import * as cfnDiff from '@aws-cdk/cloudformation-diff';
 import { ResourceDifference } from '@aws-cdk/cloudformation-diff';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as chalk from 'chalk';
 import * as fs from 'fs-extra';
 import * as promptly from 'promptly';

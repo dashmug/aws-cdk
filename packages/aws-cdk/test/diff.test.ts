@@ -1,7 +1,7 @@
 import { Writable } from 'stream';
 import { StringDecoder } from 'string_decoder';
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
-import { CloudFormationStackArtifact } from '@aws-cdk/cx-api';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
+import { CloudFormationStackArtifact } from 'aws-cdk-lib/cx-api';
 import { instanceMockFrom, MockCloudExecutable } from './util';
 import { CloudFormationDeployments } from '../lib/api/cloudformation-deployments';
 import { CdkToolkit } from '../lib/cdk-toolkit';

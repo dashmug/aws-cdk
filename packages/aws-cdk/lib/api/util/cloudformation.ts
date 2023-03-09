@@ -1,4 +1,4 @@
-import { SSMPARAM_NO_INVALIDATE } from '@aws-cdk/cx-api';
+import { SSMPARAM_NO_INVALIDATE } from 'aws-cdk-lib/cx-api';
 import { CloudFormation } from 'aws-sdk';
 import { StackStatus } from './cloudformation/stack-status';
 import { debug } from '../../logging';

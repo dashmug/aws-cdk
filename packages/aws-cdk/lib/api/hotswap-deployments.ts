@@ -1,5 +1,5 @@
 import * as cfn_diff from '@aws-cdk/cloudformation-diff';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as chalk from 'chalk';
 import { ISDK, Mode, SdkProvider } from './aws-auth';
 import { DeployStackResult } from './deploy-stack';

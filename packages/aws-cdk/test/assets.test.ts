@@ -1,4 +1,4 @@
-import { AssetMetadataEntry } from '@aws-cdk/cloud-assembly-schema';
+import { AssetMetadataEntry } from 'aws-cdk-lib/cloud-assembly-schema';
 import { testStack } from './util';
 import { MockSdk } from './util/mock-sdk';
 import { MockToolkitInfo } from './util/mock-toolkitinfo';

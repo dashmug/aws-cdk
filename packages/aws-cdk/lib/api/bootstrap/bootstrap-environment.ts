@@ -1,6 +1,6 @@
 import { info } from 'console';
 import * as path from 'path';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import { BootstrapEnvironmentOptions, BootstrappingParameters } from './bootstrap-props';
 import { BootstrapStack, bootstrapVersionFromTemplate } from './deploy-bootstrap';
 import { legacyBootstrapTemplate } from './legacy-template';

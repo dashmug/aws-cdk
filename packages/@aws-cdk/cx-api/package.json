@@ -64,16 +64,16 @@
     "organization": true
   },
   "dependencies": {
-    "@aws-cdk/cloud-assembly-schema": "0.0.0",
+    "aws-cdk-lib": "0.0.0",
     "semver": "^7.3.8"
   },
   "peerDependencies": {
-    "@aws-cdk/cloud-assembly-schema": "0.0.0"
+    "aws-cdk-lib": "0.0.0"
   },
   "license": "Apache-2.0",
   "devDependencies": {
     "@aws-cdk/cdk-build-tools": "0.0.0",
-    "@aws-cdk/cloud-assembly-schema": "0.0.0",
+    "aws-cdk-lib": "0.0.0",
     "@aws-cdk/pkglint": "0.0.0",
     "@types/jest": "^27.5.2",
     "@types/mock-fs": "^4.13.1",

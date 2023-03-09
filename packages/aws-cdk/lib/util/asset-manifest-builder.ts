@@ -1,4 +1,4 @@
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
 import * as cdk_assets from 'cdk-assets';
 
 export class AssetManifestBuilder {

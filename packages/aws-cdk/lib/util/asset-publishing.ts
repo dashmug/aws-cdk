@@ -1,4 +1,4 @@
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as AWS from 'aws-sdk';
 import * as cdk_assets from 'cdk-assets';
 import { Mode } from '../api/aws-auth/credentials';

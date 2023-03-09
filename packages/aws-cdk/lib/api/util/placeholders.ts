@@ -1,4 +1,4 @@
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import { Mode } from '../aws-auth/credentials';
 import { SdkProvider } from '../aws-auth/sdk-provider';
 

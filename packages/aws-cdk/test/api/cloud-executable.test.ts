@@ -1,5 +1,5 @@
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import { DefaultSelection } from '../../lib/api/cxapp/cloud-assembly';
 import { registerContextProvider } from '../../lib/context-providers';
 import { MockCloudExecutable } from '../util';

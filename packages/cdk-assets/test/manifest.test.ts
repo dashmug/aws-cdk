@@ -1,4 +1,4 @@
-import { Manifest } from '@aws-cdk/cloud-assembly-schema';
+import { Manifest } from 'aws-cdk-lib/cloud-assembly-schema';
 import * as mockfs from 'mock-fs';
 import { AssetManifest, DestinationIdentifier, DestinationPattern, DockerImageManifestEntry, FileManifestEntry } from '../lib';
 

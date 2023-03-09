@@ -1,8 +1,8 @@
-import * as iot from '@aws-cdk/aws-iot';
-import * as iotevents from '@aws-cdk/aws-iotevents';
-import * as logs from '@aws-cdk/aws-logs';
-import * as cdk from '@aws-cdk/core';
-import { IntegTest } from '@aws-cdk/integ-tests';
+import * as iot from 'aws-cdk-lib/aws-iot-alpha';
+import * as iotevents from 'aws-cdk-lib/aws-iotevents-alpha';
+import * as logs from 'aws-cdk-lib/aws-logs';
+import * as cdk from 'aws-cdk-lib';
+import { IntegTest } from 'aws-cdk-lib/integ-tests-alpha';
 import * as actions from '../../lib';
 
 class TestStack extends cdk.Stack {

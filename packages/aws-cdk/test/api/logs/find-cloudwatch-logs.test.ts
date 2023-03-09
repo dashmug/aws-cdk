@@ -1,4 +1,4 @@
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import { CloudFormation } from 'aws-sdk';
 import { findCloudWatchLogGroups } from '../../../lib/api/logs/find-cloudwatch-logs';
 import { testStack, TestStackArtifact } from '../../util';

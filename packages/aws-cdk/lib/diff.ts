@@ -1,6 +1,6 @@
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
 import * as cfnDiff from '@aws-cdk/cloudformation-diff';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as chalk from 'chalk';
 import { print, warning } from './logging';
 

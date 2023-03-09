@@ -1,7 +1,7 @@
 import * as os from 'os';
 import * as path from 'path';
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as fs from 'fs-extra';
 import { BOOTSTRAP_VERSION_OUTPUT, BootstrapEnvironmentOptions, BOOTSTRAP_VERSION_RESOURCE, BOOTSTRAP_VARIANT_PARAMETER, DEFAULT_BOOTSTRAP_VARIANT } from './bootstrap-props';
 import * as logging from '../../logging';

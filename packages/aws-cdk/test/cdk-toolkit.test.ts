@@ -55,9 +55,9 @@ jest.mock('../lib/logging', () => ({
 jest.setTimeout(30_000);
 
 import * as path from 'path';
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
-import { Manifest } from '@aws-cdk/cloud-assembly-schema';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
+import { Manifest } from 'aws-cdk-lib/cloud-assembly-schema';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import { instanceMockFrom, MockCloudExecutable, TestStackArtifact, withMocked } from './util';
 import { MockSdkProvider } from './util/mock-sdk';
 import { Bootstrapper } from '../lib/api/bootstrap';

@@ -1,4 +1,4 @@
-import * as ka from '@aws-cdk/aws-kinesisanalytics';
+import * as ka from 'aws-cdk-lib/aws-kinesisanalytics';
 import { PropertyGroups } from '../types';
 
 export function environmentProperties(propertyGroups?: PropertyGroups): ka.CfnApplicationV2.EnvironmentPropertiesProperty | undefined {

@@ -1,4 +1,4 @@
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import '@jsii/check-node/run';
 import * as chalk from 'chalk';
 import { install as enableSourceMapSupport } from 'source-map-support';

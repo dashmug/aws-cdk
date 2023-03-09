@@ -1,5 +1,5 @@
 import * as util from 'util';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as chalk from 'chalk';
 import { print, error } from '../../logging';
 import { flatten } from '../../util/arrays';

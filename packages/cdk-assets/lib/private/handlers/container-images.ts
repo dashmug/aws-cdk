@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { DockerImageDestination } from '@aws-cdk/cloud-assembly-schema';
+import { DockerImageDestination } from 'aws-cdk-lib/cloud-assembly-schema';
 import type * as AWS from 'aws-sdk';
 import { DockerImageManifestEntry } from '../../asset-manifest';
 import { EventType } from '../../progress';

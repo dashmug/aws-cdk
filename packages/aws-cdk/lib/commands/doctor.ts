@@ -1,5 +1,5 @@
 import * as process from 'process';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as chalk from 'chalk';
 import { print } from '../../lib/logging';
 import * as version from '../../lib/version';

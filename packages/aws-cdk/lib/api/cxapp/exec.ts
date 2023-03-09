@@ -1,8 +1,8 @@
 import * as childProcess from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
-import * as cxschema from '@aws-cdk/cloud-assembly-schema';
-import * as cxapi from '@aws-cdk/cx-api';
+import * as cxschema from 'aws-cdk-lib/cloud-assembly-schema';
+import * as cxapi from 'aws-cdk-lib/cx-api';
 import * as fs from 'fs-extra';
 import * as semver from 'semver';
 import { debug, warning } from '../../logging';
